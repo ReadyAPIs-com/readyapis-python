@@ -1,0 +1,43 @@
+name: Publish to PyPI
+
+# Triggered when you push a tag matching v*.*.*. The job builds the
+# package, runs a quick sanity test, then uploads to PyPI via OIDC
+# trusted-publisher (no API token in secrets — configured on the PyPI
+# project side per https://docs.pypi.org/trusted-publishers/).
+#
+# Manual safety: `gh workflow run publish.yml` won't trigger an upload
+# unless a matching tag is pushed; tag-driven publishing keeps the
+# release auditable through git history.
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      # Required by the PyPI trusted-publisher OIDC token exchange.
+      id-token: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install build deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install build
+      - name: Build sdist + wheel
+        run: python -m build
+      - name: Smoke-test the built wheel
+        run: |
+          pip install dist/*.whl httpx
+          python -c "from readyapis import Client; print(Client(base_url='https://readyapis.com'))"
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
