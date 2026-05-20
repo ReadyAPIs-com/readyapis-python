@@ -12,7 +12,7 @@ Thanks for taking the time to look at the source. This SDK is a thin wrapper aro
 ## What does NOT live in this repo
 
 - API behavior, endpoint accuracy, rate limits, billing - see [readyapis.com/docs](https://readyapis.com/docs/getting-started)
-- Dataset corrections (e.g. "this ZIP code is wrong") - email `hello@readyapis.com` with the source you have in mind
+- Dataset corrections (e.g. "this ZIP code is wrong") - email `support@readyapis.com` with the source you have in mind
 
 ## Filing an issue
 
@@ -45,7 +45,7 @@ PRs need:
 
 ## Security
 
-Don't open public issues for security problems. Email `security@readyapis.com` directly. We try to acknowledge within one business day.
+Don't open public issues for security problems. Email `support@readyapis.com` directly. We try to acknowledge within one business day.
 
 ## License
 
