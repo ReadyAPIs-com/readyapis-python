@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fafaf9"/>
+      <stop offset="100%" stop-color="#f4f4f2"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c8442a"/>
+      <stop offset="100%" stop-color="#e36545"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <!-- Diagonal accent stripe -->
+  <rect x="0" y="0" width="12" height="640" fill="url(#accent)"/>
+  <!-- Org wordmark in the corner -->
+  <text x="64" y="100" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="22" font-weight="500" fill="#6b6b6b" letter-spacing="0.06em">READY APIS</text>
+  <!-- Big repo name -->
+  <text x="64" y="280" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="72" font-weight="600" fill="#0a0a0a">readyapis-python</text>
+  <!-- Tagline (manually wrapped — SVG has no auto-wrap) -->
+  <text x="64" y="370" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="32" font-weight="400" fill="#1d1d1f">Official Python SDK for Ready APIs</text>
+  <text x="64" y="416" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="32" font-weight="400" fill="#1d1d1f">pip install readyapis</text>
+  <!-- Footer URL -->
+  <text x="64" y="560" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="20" fill="#a8341e">github.com/ReadyAPIs-com</text>
+  <!-- Subtle dotted texture in the upper right -->
+  <g fill="#c6c6c6" opacity="0.6">
+    <circle cx="1180" cy="80" r="3"/>
+    <circle cx="1210" cy="80" r="3"/>
+    <circle cx="1240" cy="80" r="3"/>
+    <circle cx="1180" cy="110" r="3"/>
+    <circle cx="1210" cy="110" r="3"/>
+    <circle cx="1240" cy="110" r="3"/>
+    <circle cx="1180" cy="140" r="3"/>
+    <circle cx="1210" cy="140" r="3"/>
+    <circle cx="1240" cy="140" r="3"/>
+  </g>
+</svg>
