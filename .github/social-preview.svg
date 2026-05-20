@@ -16,7 +16,7 @@
   <text x="64" y="100" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="22" font-weight="500" fill="#6b6b6b" letter-spacing="0.06em">READY APIS</text>
   <!-- Big repo name -->
   <text x="64" y="280" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="72" font-weight="600" fill="#0a0a0a">readyapis-python</text>
-  <!-- Tagline (manually wrapped — SVG has no auto-wrap) -->
+  <!-- Tagline (manually wrapped - SVG has no auto-wrap) -->
   <text x="64" y="370" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="32" font-weight="400" fill="#1d1d1f">Official Python SDK for Ready APIs</text>
   <text x="64" y="416" font-family="system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="32" font-weight="400" fill="#1d1d1f">pip install readyapis</text>
   <!-- Footer URL -->

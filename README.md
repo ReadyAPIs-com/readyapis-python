@@ -5,20 +5,20 @@
 [![Test](https://github.com/ReadyAPIs-com/readyapis-python/actions/workflows/test.yml/badge.svg)](https://github.com/ReadyAPIs-com/readyapis-python/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> Official Python SDK for [Ready APIs](https://readyapis.com) — the curated data layer for products and AI agents.
+> Official Python SDK for [Ready APIs](https://readyapis.com) - the curated data layer for products and AI agents.
 
 ```bash
 pip install readyapis
 ```
 
-Six hero APIs (geo, tax, fx, email, calendar, intel) plus identity / catalog metadata, in one tiny typed client. No Pydantic, no codegen — just `httpx` and the standard library.
+Six hero APIs (geo, tax, fx, email, calendar, intel) plus identity / catalog metadata, in one tiny typed client. No Pydantic, no codegen - just `httpx` and the standard library.
 
 ## Quick start
 
 ```python
 from readyapis import Client
 
-# Demo mode — no key needed. Hits /demo/api/v1/* with allowlisted params.
+# Demo mode - no key needed. Hits /demo/api/v1/* with allowlisted params.
 client = Client()
 
 zip_data = client.geo.zip("30301")
@@ -50,7 +50,7 @@ Get a key at <https://readyapis.com/register>. Free tier: 1,000 credits/month.
 
 ## Demo mode
 
-If no API key is configured, the client enters **demo mode** automatically. It hits `/demo/api/v1/*` routes, which require no auth but only accept a small set of allowlisted parameters (ZIP `30301`, email `hello@stripe.com`, etc.) — perfect for tinkering and CI.
+If no API key is configured, the client enters **demo mode** automatically. It hits `/demo/api/v1/*` routes, which require no auth but only accept a small set of allowlisted parameters (ZIP `30301`, email `hello@stripe.com`, etc.) - perfect for tinkering and CI.
 
 ```python
 client = Client()
@@ -99,9 +99,9 @@ Every response is wrapped in a `Response` object that proxies the JSON:API-flavo
 ```python
 r = client.geo.zip("30301")
 
-r.city            # "Atlanta"           — flattened from data.attributes
+r.city            # "Atlanta"           - flattened from data.attributes
 r.state           # "GA"
-r["county"]       # "Fulton"            — dict-style works too
+r["county"]       # "Fulton"            - dict-style works too
 r.data            # the full data dict
 r.attributes      # just the attributes dict
 r.meta            # {credits_used, source, ...}
@@ -127,7 +127,7 @@ from readyapis import Client, ApiError, AuthError, RateLimitError, NotFoundError
 try:
     client.geo.zip("99999")
 except RateLimitError as e:
-    print(f"slow down — retry in {e.retry_after}s")
+    print(f"slow down - retry in {e.retry_after}s")
 except AuthError as e:
     print(f"bad key: {e.code}")
 except NotFoundError as e:
@@ -141,7 +141,7 @@ Every `ApiError` exposes `.status_code`, `.code`, `.message`, `.body`, and (for 
 
 ## Retry behavior
 
-The client automatically retries `429`, `500`, `502`, `503`, and `504` responses with exponential backoff (0.5s, 1s, 2s — three attempts total) plus small jitter. On `429`, it honors `Retry-After` if present. Disable per-client:
+The client automatically retries `429`, `500`, `502`, `503`, and `504` responses with exponential backoff (0.5s, 1s, 2s - three attempts total) plus small jitter. On `429`, it honors `Retry-After` if present. Disable per-client:
 
 ```python
 client = Client(retry=False)
@@ -149,7 +149,7 @@ client = Client(retry=False)
 
 ## Idempotency
 
-`POST` endpoints accept an `idempotency_key` keyword. The server treats two requests with the same key (within the idempotency window) as the same logical operation — safe to retry from the client.
+`POST` endpoints accept an `idempotency_key` keyword. The server treats two requests with the same key (within the idempotency window) as the same logical operation - safe to retry from the client.
 
 ```python
 client.intel.rank(
@@ -163,7 +163,7 @@ client.intel.rank(
 
 ```python
 Client(
-    api_key=None,                          # str | None — falls back to READYAPIS_API_KEY env
+    api_key=None,                          # str | None - falls back to READYAPIS_API_KEY env
     base_url="https://readyapis.com",      # override for staging/local
     timeout=30.0,                          # per-request seconds
     retry=True,                            # retry 429 + 5xx with backoff

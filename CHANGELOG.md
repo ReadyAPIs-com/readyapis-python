@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.0] — 2026-05-19
+## [0.1.0] - 2026-05-19
 
 ### Added
 
@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   zero-friction for tinkering and CI.
 - `READYAPIS_API_KEY` env var support; explicit `api_key=` override.
 - Configurable base URL (`READYAPIS_BASE_URL` or `Client(base_url=...)`).
-- httpx-based — one HTTP dependency, sync-only client today.
+- httpx-based - one HTTP dependency, sync-only client today.
 
 [Unreleased]: https://github.com/ReadyAPIs-com/readyapis-python/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/ReadyAPIs-com/readyapis-python/releases/tag/v0.1.0

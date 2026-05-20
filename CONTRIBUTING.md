@@ -1,6 +1,6 @@
 # Contributing to `readyapis-python`
 
-Thanks for taking the time to look at the source. This SDK is a thin wrapper around the Ready APIs HTTP surface — most issues are best filed against the upstream platform, but a few belong here.
+Thanks for taking the time to look at the source. This SDK is a thin wrapper around the Ready APIs HTTP surface - most issues are best filed against the upstream platform, but a few belong here.
 
 ## What lives in this repo
 
@@ -11,8 +11,8 @@ Thanks for taking the time to look at the source. This SDK is a thin wrapper aro
 
 ## What does NOT live in this repo
 
-- API behavior, endpoint accuracy, rate limits, billing — see [readyapis.com/docs](https://readyapis.com/docs/getting-started)
-- Dataset corrections (e.g. "this ZIP code is wrong") — email `hello@readyapis.com` with the source you have in mind
+- API behavior, endpoint accuracy, rate limits, billing - see [readyapis.com/docs](https://readyapis.com/docs/getting-started)
+- Dataset corrections (e.g. "this ZIP code is wrong") - email `hello@readyapis.com` with the source you have in mind
 
 ## Filing an issue
 
@@ -20,10 +20,10 @@ Good issue includes:
 
 1. Python version (`python --version`)
 2. `readyapis` version (`pip show readyapis | grep Version`)
-3. Minimal repro — the smallest code that triggers the problem, with secrets redacted
+3. Minimal repro - the smallest code that triggers the problem, with secrets redacted
 4. What you expected, what happened
 
-If the SDK call returned an error from the server, include the full `error` object — that helps tell SDK bugs from API bugs.
+If the SDK call returned an error from the server, include the full `error` object - that helps tell SDK bugs from API bugs.
 
 ## Submitting a PR
 
